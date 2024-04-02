@@ -4,19 +4,16 @@ let compScore=0;
 let gameCount=0;
 
 //to get the user choice we have accessed all the options and stored the result in userChoice variable
-
 let choices=document.querySelectorAll(".choice");
 
 choices.forEach(choice=>{
     choice.addEventListener('click',function(){
         gameCount++;
-       
         const userChoice=choice.id;
        if(gameCount<=10){
         attempt(gameCount);
         playGame(userChoice);
        }
-        
         if(gameCount===10){
             finalGame(gameCount);  // we will define a function in which we will show the results after 10 attempts
         }
@@ -30,8 +27,6 @@ const genCompChoice=()=>{
     let randomNumber=Math.floor(Math.random()*3);
     return options[randomNumber];
 }
-
-
 //We will create different functions for different scenarios of the game
 
 //function for a draw game
@@ -50,7 +45,7 @@ const userWin=()=>{
     result.style.color="white";
     userScore++;
     document.querySelector('#userScore').innerHTML=userScore;
-    console.log("User Won mini ")
+    
 }
 //function for computer winning the game
 const compWin=()=>{
@@ -60,7 +55,7 @@ const compWin=()=>{
     result.style.color="white";
     compScore++;
     document.querySelector('#compScore').innerHTML=compScore;
-    console.log("comp Won mini ")
+    
 }
 
 //WE will create a play game function
@@ -70,7 +65,6 @@ document.querySelector('#userMsg').innerHTML=userChoice;
 
 const compChoice=genCompChoice();
 document.querySelector('#compMsg').innerHTML=compChoice;
-
 
 if(userChoice===compChoice){
     drawGame();
@@ -98,7 +92,6 @@ else if(userChoice==="Scissors" && compChoice==="Rock"){
 
 }
 function attempt(gameCount){
-    console.log(`gamecount${gameCount}`);
     document.querySelector('#instruction').innerHTML="<h3>Attempt</h3>"
     let attemptCount =document.querySelector('#inst2');
     attemptCount.innerHTML=gameCount;
@@ -107,6 +100,7 @@ function attempt(gameCount){
 }
 
 function finalGame(){
+    setTimeout(function(){
     let choiceOptions=document.querySelector(".choices");
     let  resultMsg=document.querySelector("#finalResultMsg");
     let showFinalResult=document.querySelector(".showFinalResult");
@@ -136,6 +130,7 @@ function finalGame(){
         resultMsg.innerHTML="You Lost! Better luck next time!"
         resultMsg.style.color="Red";
     }
+},1500); //2000 milliseconds= 2 seconds
    
    
 }
