@@ -1,0 +1,290 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-image: url(back.webp);
+    background-repeat: repeat;
+}
+nav{
+    height:4rem;
+    width:100%;
+    background-color: #081b31;
+    color:rgb(235, 224, 224);
+    line-height: 4rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+p{
+    font-size: 1.2rem;
+    
+}
+#intro
+{
+width:100%;
+height:5rem;
+text-align: center;
+margin-top:1rem;
+line-height:1.5rem;
+font-weight: 800;
+}
+.choices{
+    display: flex;
+    gap:2rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+.choice{
+    height:160px;
+    width:160px;
+    border-radius:50%;
+   
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+.choice:hover{
+background-color:#081b31;
+}
+.choice:active{
+    transform:scale(1.2);
+}
+img{
+    height:150px;
+    width:150px;
+    object-fit:cover;
+    border-radius:50%;
+}
+.showChoice{
+    height:8rem;
+    width:40%;
+    margin:2rem auto 0 auto;
+    padding:1rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(163, 188, 210);
+    
+    
+}
+.choiceImg{
+    height:70px;
+    width:70px;
+    border-radius: 10%;
+}
+.chose{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    gap:1rem;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+.scoreDisplay{
+    height:8rem;
+    margin-top:0.7rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:4rem;
+}
+.scoreCount{
+font-size: 4rem;
+margin-left: 2rem;
+}
+.msg{
+    background-color:#081b31 ; 
+    color:white;
+    height:3rem;
+    width:25%;
+    text-align: center;
+    border-radius: 5px;
+    line-height: 3rem;
+    margin:0.5rem auto 2rem auto;
+}
+
+.center-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display:none;
+}
+#replayButton{
+        background-color: #122f49; 
+        color:white;
+        height:3rem;
+        width:25%;
+        text-align: center;
+        border-radius: 5px;
+        line-height: 3rem;
+        margin:0.5rem auto 2rem auto;
+        font-size:1.3rem;
+        
+}
+#replayButton:active{
+    transform:scale(1.1);
+}
+footer{
+    height:3rem;
+    width:100%;
+    background-color: #142335;
+    color:blanchedalmond;
+    text-align: center;
+    line-height: 3rem;
+}
+.footInfo{
+    font-size: 1rem;
+    font-style: italic;
+}
+
+/*to show the results after 10 attempts*/
+.hide{
+    display:none;
+}
+.showFinalResult{
+    height:10rem;
+    width:100%;
+    display:none;
+    justify-content: center;align-items: center;
+}
+#finalResultMsg{
+    font-size: 3rem;
+}
+
+   
+/*media query for mobile phones and smaller devices*/
+@media only screen and (max-width: 600px) {
+
+nav {
+        height:3rem;
+        width:100%;
+        font-size: 0.8rem;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+}
+#intro{
+    margin-top: 1rem;
+    line-height: 1.2rem;
+}
+#inst2{
+    margin-top:10px;
+}
+ p{
+    font-size: 0.9rem;
+}
+.choices{
+    display: flex;
+    gap:0.5rem;
+    justify-content: center;
+    margin-top: 0.8rem;
+}
+.choice{
+    height:110px;
+    width:110px;
+    border-radius:50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:3rem;
+    
+    /*iI had a problem regarding browser-specific feature like the tap highlight color in mobile browsers, especially on iOS and Android.
+     This caused a light blue rectangle to appear around clickable elements when they are tapped.
+     to address this, I had set the -webkit-tap-highlight-color CSS property to transparent*/
+    -webkit-tap-highlight-color: transparent;
+}
+img{
+    height:109px;
+    width:109px;
+    object-fit:cover;
+    border-radius:50%;
+
+}
+
+.showChoice{
+    height:15%;
+    width:80%;
+    margin:0rem auto 2rem auto;
+    padding:1rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+   }
+.choice:active{
+    transform:scale(1.1);
+    background-color: #081b31;
+}
+.scoreDisplay{
+    height:8rem;
+    margin-top:0.5rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:4rem;
+}
+.scoreCount{
+font-size: 5rem;
+margin-left: 1rem;
+}
+#compScore{
+    margin-left:1.5rem;
+}
+.msg{
+    height:3rem;
+    width:60%;
+    text-align: center;
+    border-radius: 5px;
+    line-height: 3rem;
+    margin:5% auto 2rem auto;
+}
+#replayButton{
+    height:3rem;
+    width:60%;
+    margin-top:3rem;
+    
+}
+#result{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+/*to show the results after 10 attempts*/
+#finalResultMsg{
+    font-size: 1.2rem;
+}
+.hide{
+    display:none;
+}
+
+/* to place the footer at the bottom of any screen*/
+html {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0; /* Ensure body has no margin */
+}
+.content {
+    flex: 1; /* This makes the content expand to fill available space, pushing the footer down */
+}
+footer {
+    height: 3rem;
+    width: 100%;
+    background-color: #142335;
+    color: blanchedalmond;
+    text-align: center;
+    line-height: 3rem;
+    /* Remove position:relative; and bottom:0; if previously set */
+}
+.footInfo{
+    font-size:0.6rem;
+}
+}
+
+ 

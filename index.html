@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav><h1>Rock Paper Scissors</h1></nav>
+    <main class="content">
+      <!--Introduction of the game-->
+
+      <div id="intro">
+        <p class="inst1">You are playing against the computer.</p>
+        <p class="inst1">You have 10 attempts</p>
+        <p id="instruction">Choose your weapon:</p>
+        <div id="inst2"></div>
+      </div>
+      <div class="showFinalResult">
+        <h1 id="finalResultMsg"></h1>
+      </div>
+
+      <!-- Now will create choices by the help of images-->
+
+      <div class="choices">
+        <div class="choice" id="Rock"><img src="rock.webp" /></div>
+        <div class="choice" id="Paper"><img src="paper.webp" /></div>
+        <div class="choice" id="Scissors"><img src="scissors.webp" /></div>
+      </div>
+
+      <!--We will create a div in which we will show the computer score and your score-->
+
+      <div class="showChoice">
+        <div class="chose" id="humanChose">
+          <img src="humanImage.webp" class="choiceImg" />
+          <p id="userMsg">Play Game</p>
+        </div>
+        <div class="chose" id="compChose">
+          <img src="roboImage.webp" class="choiceImg" />
+          <p id="compMsg">Play Game</p>
+        </div>
+      </div>
+
+      <!-- Now we will create a div for showing scores-->
+
+      <div class="scoreDisplay">
+        <div class="yourScores">
+          <div id="userScore" class="scoreCount">0</div>
+          <p>Your Score</p>
+        </div>
+        <div class="compScores">
+          <div id="compScore" class="scoreCount">0</div>
+          <p>Computer Score</p>
+        </div>
+      </div>
+      <div class="msg">
+        <p id="result">Play your move</p>
+      </div>
+      <div class="center-container">
+    <button id="replayButton">Replay</button>
+</div>
+    </main>
+    <footer>
+      <p class="footInfo">By Shubham Singh :)</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
