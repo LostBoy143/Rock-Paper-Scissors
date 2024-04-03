@@ -41,7 +41,7 @@ font-weight: 800;
     height:160px;
     width:160px;
     border-radius:50%;
-   
+    box-shadow: 0 8px 12px rgb(24, 24, 24);
     display:flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +51,7 @@ font-weight: 800;
 background-color:#081b31;
 }
 .choice:active{
-    transform:scale(1.2);
+    transform:scale(0.8);
 }
 img{
     height:150px;
@@ -106,6 +106,7 @@ margin-left: 2rem;
     border-radius: 5px;
     line-height: 3rem;
     margin:0.5rem auto 2rem auto;
+    cursor:pointer;
 }
 
 .center-container{
@@ -155,8 +156,7 @@ footer{
 #finalResultMsg{
     font-size: 3rem;
 }
-
-   
+ 
 /*media query for mobile phones and smaller devices*/
 @media only screen and (max-width: 600px) {
 
@@ -192,6 +192,7 @@ nav {
     justify-content: center;
     align-items: center;
     margin-bottom:3rem;
+    box-shadow: 0 8px 12px rgb(24, 24, 24);
     
     /*iI had a problem regarding browser-specific feature like the tap highlight color in mobile browsers, especially on iOS and Android.
      This caused a light blue rectangle to appear around clickable elements when they are tapped.
@@ -216,7 +217,7 @@ img{
     align-items: center;
    }
 .choice:active{
-    transform:scale(1.1);
+    transform:scale(0.8);
     background-color: #081b31;
 }
 .scoreDisplay{
@@ -226,6 +227,10 @@ img{
     justify-content: center;
     align-items: center;
     gap:4rem;
+}
+#compMsg,#userMsg{
+    font-weight: 700;
+    font-size: 1rem;
 }
 .scoreCount{
 font-size: 5rem;

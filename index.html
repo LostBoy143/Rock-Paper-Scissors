@@ -28,6 +28,10 @@
         <div class="choice" id="Paper"><img src="paper.webp" /></div>
         <div class="choice" id="Scissors"><img src="scissors.webp" /></div>
       </div>
+      <!-- For audio -->
+      <audio id="clickSound">
+        <source src="clickSound.mp3" type="audio/mpeg" />
+      </audio>
 
       <!--We will create a div in which we will show the computer score and your score-->
 
@@ -57,9 +61,20 @@
       <div class="msg">
         <p id="result">Play your move</p>
       </div>
+      <!-- For audio -->
+      <audio id="winnerSound">
+        <source src="winnerSound.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="looserSound">
+        <source src="looserSound.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="drawSound">
+        <source src="drawSound.mp3" type="audio/mpeg" />
+      </audio>
+
       <div class="center-container">
-    <button id="replayButton">Replay</button>
-</div>
+        <button id="replayButton">Replay</button>
+      </div>
     </main>
     <footer>
       <p class="footInfo">By Shubham Singh :)</p>

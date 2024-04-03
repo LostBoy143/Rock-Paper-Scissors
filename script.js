@@ -2,6 +2,11 @@
 let userScore=0;
 let compScore=0;
 let gameCount=0;
+document.querySelector("#result").onclick= ()=>{
+alert("Click any of the three images to choose your weapon. After 10 rounds the winner will be announced");
+}
+
+
 
 //to get the user choice we have accessed all the options and stored the result in userChoice variable
 let choices=document.querySelectorAll(".choice");
@@ -9,6 +14,8 @@ let choices=document.querySelectorAll(".choice");
 choices.forEach(choice=>{
     choice.addEventListener('click',function(){
         gameCount++;
+        var clickSound=new Audio('clickSound.mp3');
+        clickSound.play();
         const userChoice=choice.id;
        if(gameCount<=10){
         attempt(gameCount);
@@ -114,21 +121,27 @@ function finalGame(){
     showFinalResult.style.display="flex";
     replayContainer.style.display="flex";
    
-    console.log("match is ended");
+    
     if (userScore===compScore){
         console.log("Game was draw");
-        resultMsg.innerHTML="It's a draw!"
-        resultMsg.style.color="#333333"
+        resultMsg.innerHTML="It's a draw!";
+        resultMsg.style.color="#333333";
+        var drawSound=new Audio('drawSound.mp3');
+        drawSound.play();
     }
     else if(userScore>compScore){
         console.log("User won");
         resultMsg.innerHTML='Congratulations! Victory is Yours!';
         resultMsg.style.color="green";
+        var winnerSound=new Audio('winnerSound.mp3');
+        winnerSound.play();
     }
     else{
         console.log("Computer won");
         resultMsg.innerHTML="You Lost! Better luck next time!"
         resultMsg.style.color="Red";
+        var looserSound=new Audio('looserSound.mp3');
+        looserSound.play();
     }
 },1500); //2000 milliseconds= 2 seconds
    
